@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module("my-app", []);
+        app.controller('catCtrl', function ($scope, $http) {
+            $http.get("https://localhost:44333/api/catagory").then(function (resp) {
+                $scope.cats = resp.data;
+            },
+                function (err) {
+                    debugger;
+                });
+        });
+
+    </script>
+</head>
+
+<body ng-app="my-app">
+    <ul class="nbar">
+        <li class="nli"><a class="na" href="">Online Shopping</a></li>
+        <li class="nli"><a class="active" href="home.html">Home</a></li>
+        <li class="nli"><a class="na" href="">Product</a></li>
+        <li class="nli"><a class="na" href="">Sign up</a></li>
+        <li class="nli"><a class="na" href="">Log in</a></li>
+        <li class="nli"><a class="na" href="">Contact</a></li>
+    </ul>
+    <br>
+    <div class="lpanel">
+        <p class="login">Log In</p>
+        <form>
+            <lebel>Username: </lebel> <input type="text" placeholder="Username"><br><br>
+            <lebel>Password: </lebel> <input type="password" placeholder = "Password"><br><br>
+            <button type="submit">Login</button><br><br>
+            <a href="">Forget password? --></a>
+        </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="lpanel">
+        <p class="login">Categories</p>
+        <div ng-controller="catCtrl">
+            <ul ng-repeat="c in cats">
+                <li><a href="">{{c.Name}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>

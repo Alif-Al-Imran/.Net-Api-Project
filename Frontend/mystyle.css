@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.nbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #04AA6D;
+}
+
+.nli {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.na {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.active {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #333;
+}
+.login{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background-color: #04AA6D;
+    color: white;
+    font-size: 25px;
+    padding: 7px 8px;
+}
+.lpanel{
+    float: left;
+
+}
+.lb{
+    text-align: center;
+}
